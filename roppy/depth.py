@@ -392,7 +392,6 @@ def s_stretch(N, theta_s, theta_b, stagger='rho', Vstretching=1):
         else:
             raise ValueError("stagger must be 'rho' or 'w'")
         S = -(k**2 - 2.*k*N + k + N**2 - N) / (N**2 - N) - 0.01 * (k**2 - k*N) / (1 - N)
-        print(S)
         C = (1 - np.cosh(theta_s * S)) / (np.cosh(theta_s) - 1)
         C = (np.exp(theta_b * C) - 1) / (1 - np.exp(-theta_b))
         return C
